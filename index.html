@@ -1,223 +1,83 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grandplayer Tournament</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f4f6f8;
-      color: #222;
-    }
-
-    header {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 16px;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 25px auto;
-      padding: 15px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-      margin-bottom: 15px;
-      color: #111827;
-    }
-
-    .info {
-      line-height: 1.9;
-      font-size: 17px;
-    }
-
-    label {
-      display: block;
-      margin-top: 13px;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    input {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 100%;
-      margin-top: 20px;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      background: #16a34a;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #15803d;
-    }
-
-    .qr {
-      text-align: center;
-    }
-
-    .qr img {
-      width: 280px;
-      max-width: 100%;
-      margin-top: 15px;
-      border-radius: 10px;
-    }
-
-
-
-  
-      
-    
-
-    .contact {
-      text-align: center;
-      font-size: 18px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      color: white;
-      margin-top: 30px;
-    }
-
-    .success {
-      display: none;
-      margin-top: 15px;
-      padding: 12px;
-      background: #dcfce7;
-      color: #166534;
-      border-radius: 8px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Tournament Registration</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background: #f4f6f8; color: #222; }
+        header { background: #111827; color: white; text-align: center; padding: 25px 15px; }
+        header h1 { font-size: 32px; margin-bottom: 8px; }
+        header p { font-size: 16px; }
+        .container { max-width: 600px; margin: 25px auto; padding: 15px; }
+        .card { background: white; border-radius: 15px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        h2 { margin-bottom: 15px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 5px; }
+        .player-section { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .player-section:last-child { border: none; margin-bottom: 0; }
+        label { display: block; margin-top: 10px; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; margin-bottom: 10px; }
+        button { width: 100%; margin-top: 20px; padding: 16px; border: none; border-radius: 8px; background: #16a34a; color: white; font-size: 18px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #15803d; }
+    </style>
 </head>
-
 <body>
-
-  <header>
-    <h1>🎮 GRANDPLAYER</h1>
-    <p>eSports Tournament</p>
-  </header>
-
-  <div class="container">
-
-    <div class="card">
-      <h2>🏆 Tournament Details</h2>
-
-      <div class="info">
-        <p><strong>Game / Sport:</strong> eSports</p>
-        <p><strong>Date:</strong> 08/09/2026 - 1/12/2026</p>
-        <p><strong>Time:</strong> 9:00 AM - 12:00</p>
-        
-      
-      </div>
+    <header>
+        <h1>GRANDPLAYER</h1>
+        <p>Squad Tournament Registration</p>
+    </header>
+    <div class="container">
+        <form id="registrationForm">
+            <div class="card">
+                <h2>Team Details</h2>
+                <label for="teamName">Team Name</label>
+                <input type="text" id="teamName" placeholder="Enter your team name" required>
+            </div>
+            <div class="card">
+                <h2>Players Information</h2>
+                <!-- Player 1 -->
+                <div class="player-section">
+                    <h3>Player 1 (Leader)</h3>
+                    <label for="p1Name">Name</label>
+                    <input type="text" id="p1Name" placeholder="Enter name" required>
+                    <label for="p1Uid">UID</label>
+                    <input type="text" id="p1Uid" placeholder="Enter UID" required>
+                    <label for="p1Mobile">Mobile Number</label>
+                    <input type="tel" id="p1Mobile" placeholder="Enter mobile number" maxlength="10" required>
+                </div>
+                <!-- Player 2 -->
+                <div class="player-section">
+                    <h3>Player 2</h3>
+                    <label for="p2Name">Name</label>
+                    <input type="text" id="p2Name" placeholder="Enter name" required>
+                    <label for="p2Uid">UID</label>
+                    <input type="text" id="p2Uid" placeholder="Enter UID" required>
+                    <label for="p2Mobile">Mobile Number</label>
+                    <input type="tel" id="p2Mobile" placeholder="Enter mobile number" maxlength="10" required>
+                </div>
+                <!-- Player 3 -->
+                <div class="player-section">
+                    <h3>Player 3</h3>
+                    <label for="p3Name">Name</label>
+                    <input type="text" id="p3Name" placeholder="Enter name" required>
+                    <label for="p3Uid">UID</label>
+                    <input type="text" id="p3Uid" placeholder="Enter UID" required>
+                    <label for="p3Mobile">Mobile Number</label>
+                    <input type="tel" id="p3Mobile" placeholder="Enter mobile number" maxlength="10" required>
+                </div>
+                <!-- Player 4 -->
+                <div class="player-section">
+                    <h3>Player 4</h3>
+                    <label for="p4Name">Name</label>
+                    <input type="text" id="p4Name" placeholder="Enter name" required>
+                    <label for="p4Uid">UID</label>
+                    <input type="text" id="p4Uid" placeholder="Enter UID" required>
+                    <label for="p4Mobile">Mobile Number</label>
+                    <input type="tel" id="p4Mobile" placeholder="Enter mobile number" maxlength="10" required>
+                </div>
+            </div>
+            <button type="submit">Submit Registration</button>
+        </form>
     </div>
-
-    <div class="card">
-      <h2>📝 Player Registration</h2>
-
-      <form onsubmit="registerPlayer(event)">
-
-        <label>Player Name</label>
-        <input type="text" id="name" placeholder="अपना नाम लिखें" required>
-
-        <label>UID Number</label>
-        <input type="text" id="uid" placeholder="अपना UID Number लिखें" required>
-
-        <label>Mobile Number</label>
-        <input type="tel" id="mobile" placeholder="अपना मोबाइल नंबर लिखें"
-               maxlength="10" required>
-
-        <button type="submit">Register Now</button>
-
-      </form>
-
-      <div class="success" id="success">
-        Registration details भर दिए गए hai 
-      </div>
-    </div>
-
-
-      
-
-
-  
-
-    
-      
-      
-      
-    
-
-  
-
-  <footer>
-    © 2026 Grandplayer Tournament
-  </footer>
-
-  <script>
-    function registerPlayer(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const uid = document.getElementById("uid").value;
-      const mobile = document.getElementById("mobile").value;
-
-      if (mobile.length !== 10) {
-        alert("कृपया 10 अंकों का मोबाइल नंबर डालें।");
-        return;
-      }
-
-      document.getElementById("success").style.display = "block";
-
-      alert(
-        "Registration details भर दिए गए हैं।\n\n" +
-        "Name: " + name + "\n" +
-        "UID: " + uid + "\n" +
-        "Mobile: " + mobile
-      );
-    }
-  </script>
-
 </body>
 </html>
